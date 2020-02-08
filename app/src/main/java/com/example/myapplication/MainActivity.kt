@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.mqtt.MqttClientHelper
 import com.google.android.material.snackbar.Snackbar
@@ -23,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         const val TAG = "MainActivity"
 
         // Define these values in res/values/strings.xml
-        const val TOPIC = "my/first/topic/name"
+        //const val TOPIC = "my/first/topic/name"
+        const val TOPIC = "/test"
         const val MSG = "My string message payload"
     }
 
@@ -42,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         // pub fab button
         fab.setOnClickListener { view ->
-            var snackbarMsg : String
+            var snackbarMsg: String
             try {
                 mqttClient.publish(TOPIC, MSG)
                 snackbarMsg = "Published to topic '$TOPIC'!"
@@ -55,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
         // sub fab button
         fab2.setOnClickListener { view ->
-            var snackbarMsg : String
+            var snackbarMsg: String
             try {
                 mqttClient.subscribe(TOPIC)
                 snackbarMsg = "Subscribed to topic '$TOPIC'!"
@@ -68,7 +71,11 @@ class MainActivity : AppCompatActivity() {
 
         Timer("CheckMqttConnection", false).schedule(3000) {
             if (!mqttClient.isConnected()) {
-                Snackbar.make(EditText1, "Failed to connect to: '$SOLACE_MQTT_HOST' within 3 seconds", Snackbar.LENGTH_INDEFINITE)
+                Snackbar.make(
+                    EditText1,
+                    "Failed to connect to: '$SOLACE_MQTT_HOST' within 3 seconds",
+                    Snackbar.LENGTH_INDEFINITE
+                )
                     .setAction("Action", null).show()
             }
         }
@@ -80,13 +87,21 @@ class MainActivity : AppCompatActivity() {
             override fun connectComplete(b: Boolean, s: String) {
                 Log.w("Debug", "Connected to host '$SOLACE_MQTT_HOST'.")
             }
+
             override fun connectionLost(throwable: Throwable) {
                 Log.w("Debug", "Connected to host '$SOLACE_MQTT_HOST' lost.")
             }
+
             @Throws(Exception::class)
             override fun messageArrived(topic: String, mqttMessage: MqttMessage) {
                 Log.w("Debug", "Message received from host '$SOLACE_MQTT_HOST': $mqttMessage")
                 EditText1.setText("${EditText1.text.toString().toInt() + 1}")
+                Toast.makeText(
+                    baseContext,
+                    "Hello: " + topic + "World: " + mqttMessage,
+                    Toast.LENGTH_LONG
+                )
+                    .show()
 
             }
 

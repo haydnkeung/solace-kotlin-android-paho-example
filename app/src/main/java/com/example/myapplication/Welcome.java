@@ -19,7 +19,7 @@ public class Welcome extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                Intent intent = new Intent(v.getContext(), ForSale.class);
                 startActivity(intent);
             }
         });
