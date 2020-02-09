@@ -30,8 +30,8 @@ public class ForSale extends AppCompatActivity {
 
         String[] arrayOfItems = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"};
 
-        if(list != "Hello People"){
-            arrayOfItems= list.split(" ");
+        if (list.equals("Hello People") == false) {
+            arrayOfItems = list.split(" ");
         }
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
