@@ -18,6 +18,11 @@ public class Stock_details extends AppCompatActivity {
 
         Intent intent = getIntent();
         String title = intent.getStringExtra("name");
+        boolean b = intent.getBooleanExtra("owned", false);
+        if (b) {
+            Button button = findViewById(R.id.buyButton);
+            button.setVisibility(View.GONE);
+        }
 
         TextView v = findViewById(R.id.detailTitle);
         v.setText(title);

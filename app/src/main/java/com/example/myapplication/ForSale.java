@@ -21,7 +21,6 @@ public class ForSale extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -32,11 +31,11 @@ public class ForSale extends AppCompatActivity {
 
         Intent i = getIntent();
         String list = i.getStringExtra("stockNames");
-        Toast.makeText(
-                this,
-                "FS: " + list,
-                Toast.LENGTH_LONG
-        ).show();
+//        Toast.makeText(
+//                this,
+//                "FS: " + list,
+//                Toast.LENGTH_LONG
+//        ).show();
 
 
         String[] arrayOfItems = {"Acetaminophen", "Adderall", "Alprazolam", "Amitriptyline", "Amlodipine", "Amoxicillin", "Ativan", "Atorvastatin", "Advil", "Tylenol", "Insulin"};

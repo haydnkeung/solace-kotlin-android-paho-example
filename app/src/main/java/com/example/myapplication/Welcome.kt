@@ -53,19 +53,19 @@ class Welcome : AppCompatActivity() {
                 Log.w("Debug", "Message received from host '$SOLACE_MQTT_HOST': $mqttMessage")
                 //EditText1.setText("${EditText1.text.toString().toInt() + 1}")
                 stockNames = "" + mqttMessage;
-                Toast.makeText(
-                    baseContext,
-                    "Hello: " + topic + "World: " + mqttMessage,
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
+//                Toast.makeText(
+//                    baseContext,
+//                    "Hello: " + topic + "World: " + mqttMessage,
+//                    Toast.LENGTH_SHORT
+//                )
+//                    .show()
 
-                Toast.makeText(
-                    baseContext,
-                    "List: " + stockNames,
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
+//                Toast.makeText(
+//                    baseContext,
+//                    "List: " + stockNames,
+//                    Toast.LENGTH_SHORT
+//                )
+//                    .show()
 
             }
 

@@ -6,4 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MyPatents">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mybar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+        <TextView
+            android:id="@+id/myEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="16dp"
+            android:clickable="true"
+            android:foregroundGravity="center_vertical"
+            android:gravity="center"
+            android:onClick="toProfile"
+            android:text="My Patents"
+            android:textColor="#ffff"
+            android:textSize="32dp"
+            tools:context=".activities." />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/myPatentsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mybar"></ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>

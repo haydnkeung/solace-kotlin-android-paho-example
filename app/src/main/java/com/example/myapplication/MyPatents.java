@@ -15,23 +15,16 @@ import android.widget.Toast;
 public class MyPatents extends AppCompatActivity {
 
 
-    public void toProfile(View v) {
-        Intent intent = new Intent(v.getContext(), MyPatents.class);
-
-        startActivity(intent);
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.mybar);
         setSupportActionBar(toolbar);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_patents);
 
         Intent i = getIntent();
-        String list = "Quadramet Hydrochloride Quinidex Quinidine";
+        String list = "Quadramet Hydrochloride Quinidex Quinidine Insulin";
 
 
         String[] arrayOfItems = {""};
@@ -42,7 +35,7 @@ public class MyPatents extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 R.layout.element, R.id.itemName, arrayOfItems);
 
-        ListView listView = (ListView) findViewById(R.id.forSaleList);
+        ListView listView = (ListView) findViewById(R.id.myPatentsList);
         listView.setAdapter(adapter);
 
 
@@ -55,6 +48,7 @@ public class MyPatents extends AppCompatActivity {
                 //Toast.makeText(getBaseContext(), name, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(view.getContext(), Stock_details.class);
                 intent.putExtra("name", name);
+                intent.putExtra("owned", true);
                 startActivity(intent);
             }
         });
