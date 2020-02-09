@@ -19,8 +19,20 @@ public class ForSale extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_for_sale);
 
+        Intent i = getIntent();
+        String list = i.getStringExtra("stockNames");
+        Toast.makeText(
+                this,
+                list,
+                Toast.LENGTH_LONG
+        ).show();
+
 
         String[] arrayOfItems = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"};
+
+        if(list != "Hello People"){
+            arrayOfItems= list.split(" ");
+        }
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 R.layout.element, R.id.itemName, arrayOfItems);
