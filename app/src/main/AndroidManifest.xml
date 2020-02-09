@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Stock_details"></activity>
+        <activity android:name=".MyPatents"></activity>
+        <activity android:name=".Stock_details" />
         <activity android:name=".ForSale" />
         <activity android:name=".Welcome">
             <intent-filter>

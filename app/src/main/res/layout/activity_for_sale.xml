@@ -7,40 +7,45 @@
     android:orientation="vertical"
     tools:context=".ForSale">
 
-<!--    <include-->
-<!--        android:id="@+id/toolbar"-->
-<!--        layout="@layout/toolbar" />-->
+    <!--    <include-->
+    <!--        android:id="@+id/toolbar"-->
+    <!--        layout="@layout/toolbar" />-->
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="4dp"
         android:background="@color/colorPrimary"
+        android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
         <TextView
-            android:layout_marginVertical="16dp"
-            android:gravity="center"
-            android:text="Patents Marketplace"
+            android:id="@+id/myEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/myEditText"
-            android:textSize="32dp"
-            android:textColor="#fff"/>
+            android:layout_marginVertical="16dp"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_account_circle_24px"
+            android:foregroundGravity="center_vertical"
+            android:gravity="center"
+            android:onClick="toProfile"
+            android:text="Patents Marketplace"
+            android:textColor="#fff"
+            android:textSize="32dp" />
     </androidx.appcompat.widget.Toolbar>
-<!--    -->
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginVertical="16dp"-->
-<!--        android:text="Patents for Sale"-->
-<!--        android:textSize="32sp" />-->
+    <!--    -->
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginVertical="16dp"-->
+    <!--        android:text="Patents for Sale"-->
+    <!--        android:textSize="32sp" />-->
 
-<!--    <View-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="1dp"-->
-<!--        android:background="@android:color/darker_gray" />-->
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="1dp"-->
+    <!--        android:background="@android:color/darker_gray" />-->
 
 
     <ListView

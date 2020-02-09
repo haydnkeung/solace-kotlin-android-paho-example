@@ -29,7 +29,7 @@ class Welcome : AppCompatActivity() {
 
         // Define these values in res/values/strings.xml
         //const val TOPIC = "my/first/topic/name"
-        const val TOPIC = "/test"
+        const val TOPIC = "/drugs"
         const val MSG = "My string message payload"
     }
 
@@ -52,10 +52,17 @@ class Welcome : AppCompatActivity() {
             override fun messageArrived(topic: String, mqttMessage: MqttMessage) {
                 Log.w("Debug", "Message received from host '$SOLACE_MQTT_HOST': $mqttMessage")
                 //EditText1.setText("${EditText1.text.toString().toInt() + 1}")
-                stockNames = mqttMessage.toString();
+                stockNames = "" + mqttMessage;
                 Toast.makeText(
                     baseContext,
                     "Hello: " + topic + "World: " + mqttMessage,
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
+
+                Toast.makeText(
+                    baseContext,
+                    "List: " + stockNames,
                     Toast.LENGTH_SHORT
                 )
                     .show()

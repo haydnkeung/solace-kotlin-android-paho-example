@@ -3,7 +3,6 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ForSale extends AppCompatActivity {
+public class MyPatents extends AppCompatActivity {
+
 
     public void toProfile(View v) {
         Intent intent = new Intent(v.getContext(), MyPatents.class);
@@ -28,22 +28,16 @@ public class ForSale extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_for_sale);
+        setContentView(R.layout.activity_my_patents);
 
         Intent i = getIntent();
-        String list = i.getStringExtra("stockNames");
-        Toast.makeText(
-                this,
-                "FS: " + list,
-                Toast.LENGTH_LONG
-        ).show();
+        String list = "Quadramet Hydrochloride Quinidex Quinidine";
 
 
-        String[] arrayOfItems = {"Acetaminophen", "Adderall", "Alprazolam", "Amitriptyline", "Amlodipine", "Amoxicillin", "Ativan", "Atorvastatin", "Advil", "Tylenol", "Insulin"};
+        String[] arrayOfItems = {""};
 
-        if (list != null && list.equals("Hello People") == false) {
-            arrayOfItems = list.split(" ");
-        }
+        arrayOfItems = list.split(" ");
+
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 R.layout.element, R.id.itemName, arrayOfItems);
