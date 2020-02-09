@@ -32,7 +32,7 @@ public class ForSale extends AppCompatActivity {
         ).show();
 
 
-        String[] arrayOfItems = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"};
+        String[] arrayOfItems = {"Acetaminophen", "Adderall", "Alprazolam", "Amitriptyline", "Amlodipine", "Amoxicillin", "Ativan", "Atorvastatin", "Advil", "Tylenol", "Insulin"};
 
         if (list != null && list.equals("Hello People") == false) {
             arrayOfItems = list.split(" ");

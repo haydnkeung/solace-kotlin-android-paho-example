@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.myapplication.mqtt.MqttClientHelper
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_welcome.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken
 import org.eclipse.paho.client.mqttv3.MqttCallbackExtended
@@ -50,7 +51,7 @@ class Welcome : AppCompatActivity() {
             @Throws(Exception::class)
             override fun messageArrived(topic: String, mqttMessage: MqttMessage) {
                 Log.w("Debug", "Message received from host '$SOLACE_MQTT_HOST': $mqttMessage")
-                EditText1.setText("${EditText1.text.toString().toInt() + 1}")
+                //EditText1.setText("${EditText1.text.toString().toInt() + 1}")
                 stockNames = mqttMessage.toString();
                 Toast.makeText(
                     baseContext,
@@ -92,8 +93,7 @@ class Welcome : AppCompatActivity() {
                 snackbarMsg = "Error subscribing to topic: ${Welcome.TOPIC}!"
 
             }
-            Snackbar.make(v, snackbarMsg, Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            //Snackbar.make(v, snackbarMsg, Snackbar.LENGTH_LONG).setAction("Action", null).show()
 
 
             Thread.sleep(1000);
@@ -104,12 +104,12 @@ class Welcome : AppCompatActivity() {
 
         Timer("CheckMqttConnection", false).schedule(3000) {
             if (!mqttClient.isConnected()) {
-                Snackbar.make(
-                    EditText1,
-                    "Failed to connect to: '$SOLACE_MQTT_HOST' within 3 seconds",
-                    Snackbar.LENGTH_INDEFINITE
-                )
-                    .setAction("Action", null).show()
+//                Snackbar.make(
+//                    buttonGo,
+//                    "Failed to connect to: '$SOLACE_MQTT_HOST' within 3 seconds",
+//                    Snackbar.LENGTH_INDEFINITE
+//                )
+//                    .setAction("Action", null).show()
             }
         }
 
