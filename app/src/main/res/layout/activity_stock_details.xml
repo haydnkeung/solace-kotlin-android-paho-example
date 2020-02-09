@@ -21,12 +21,20 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="100dp"
-        android:text="Lorem Ipsum is simply dummy text of the printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic tym."
-        android:textSize="30dp" />
+        android:text="Insulin is a hormone made by the pancreas that allows your body to use sugar (glucose) from carbohydrates in the food that you eat for energy or to store glucose for future use. Insulin helps keeps your blood sugar level from getting too high (hyperglycemia) or too low (hypoglycemia)"
+        android:textSize="15dp" />
+
+    <ImageView
+        android:id="@+id/graph"
+        android:layout_width="600dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/chart" />
 
 
     <Button
-        android:id="@+id/detailButton"
+        android:id="@+id/buyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

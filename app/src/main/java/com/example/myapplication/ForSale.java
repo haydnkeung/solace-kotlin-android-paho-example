@@ -30,7 +30,7 @@ public class ForSale extends AppCompatActivity {
 
         String[] arrayOfItems = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"};
 
-        if (list.equals("Hello People") == false) {
+        if (list != null && list.equals("Hello People") == false) {
             arrayOfItems = list.split(" ");
         }
 
@@ -47,7 +47,7 @@ public class ForSale extends AppCompatActivity {
                                     long id) {
 
                 String name = ((TextView) view).getText().toString();
-                Toast.makeText(getBaseContext(), name, Toast.LENGTH_LONG).show();
+                //Toast.makeText(getBaseContext(), name, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(view.getContext(), Stock_details.class);
                 intent.putExtra("name", name);
                 startActivity(intent);

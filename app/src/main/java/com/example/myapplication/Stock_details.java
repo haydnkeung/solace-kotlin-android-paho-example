@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Stock_details extends AppCompatActivity {
 
@@ -19,5 +22,14 @@ public class Stock_details extends AppCompatActivity {
         TextView v = findViewById(R.id.detailTitle);
         v.setText(title);
 
+        final Button button = (Button) findViewById(R.id.buyButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ForSale.class);
+                Toast.makeText(getBaseContext(), "Patent has been added to your account", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+        });
     }
 }

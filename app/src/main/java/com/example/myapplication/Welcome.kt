@@ -55,7 +55,7 @@ class Welcome : AppCompatActivity() {
                 Toast.makeText(
                     baseContext,
                     "Hello: " + topic + "World: " + mqttMessage,
-                    Toast.LENGTH_LONG
+                    Toast.LENGTH_SHORT
                 )
                     .show()
 
