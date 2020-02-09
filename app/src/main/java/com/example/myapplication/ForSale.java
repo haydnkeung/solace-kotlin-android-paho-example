@@ -34,8 +34,10 @@ public class ForSale extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
 
-                Toast.makeText(getBaseContext(), ((TextView) view).getText().toString(), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(view.getContext(), MainActivity.class);
+                String name = ((TextView) view).getText().toString();
+                Toast.makeText(getBaseContext(), name, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(view.getContext(), Stock_details.class);
+                intent.putExtra("name", name);
                 startActivity(intent);
             }
         });
